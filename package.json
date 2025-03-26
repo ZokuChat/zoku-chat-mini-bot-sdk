@@ -1,0 +1,26 @@
+{
+  "name": "web-chat-demo-bot",
+  "version": "0.1.0-alpha",
+  "description": "none",
+  "keywords": [
+    "bot",
+    "chat"
+  ],
+  "license": "MIT",
+  "author": "ZokuTe",
+  "type": "module",
+  "main": "example.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.13"
+  },
+  "dependencies": {
+    "@types/ws": "^8.18.0",
+    "reggol": "^2.1.0",
+    "ws": "^8.18.1",
+    "yaml": "^2.7.0",
+    "zod": "^3.24.2"
+  }
+}
