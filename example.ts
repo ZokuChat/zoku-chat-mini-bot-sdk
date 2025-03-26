@@ -6,7 +6,7 @@ const bot = new Bot({
   id: '自己随机个UUID写这',
   name,
   messageCacheLimit: 10,
-  baseUrl: 'http://47.96.107.255:11451/',
+  baseUrl: '把你聊天室URL写这', // 例子：https://chat.zokute.top
 });
 
 (async () => {
