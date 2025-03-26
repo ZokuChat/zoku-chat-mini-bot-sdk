@@ -3,7 +3,7 @@ import Bot from './index.js';
 const name = '俗手的机器人';
 
 const bot = new Bot({
-  id: '7396004e-9e05-4839-ad1f-825296c24c76',
+  id: '自己随机个UUID写这',
   name,
   messageCacheLimit: 10,
   baseUrl: 'http://47.96.107.255:11451/',
