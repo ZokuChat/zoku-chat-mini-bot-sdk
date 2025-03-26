@@ -44,6 +44,10 @@ export default class Bot {
         this.#wsEcho = true;
       }
     });
+    this.eventListeners.register('receive-message', async (e) => {
+      this.messages.push(e.data);
+      this.limiter()
+    })
     this.config = config;
     this.baseUrl = new URL(this.config.baseUrl);
     if (config.name.trim().length < 3) {
@@ -130,6 +134,7 @@ export default class Bot {
     if (data) {
       const get: GETData = GETSchema.parse(data);
       this.messages = get.messages;
+      this.limiter()
       if (!get.exists) {
         await this.#submitName();
       }
@@ -152,6 +157,12 @@ export default class Bot {
 
   getLogger(name: string) {
     return this.#loggerFactory.createLogger(name);
+  }
+
+  limiter() {
+    while (this.messages.length > this.config.messageCacheLimit) {
+      this.messages.shift();
+    }
   }
 }
 
